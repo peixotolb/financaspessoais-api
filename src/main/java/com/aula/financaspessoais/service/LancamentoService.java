@@ -1,6 +1,8 @@
-package com.aula.financaspessoais.financaspessoais.service;
+package com.aula.financaspessoais.service;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 import com.aula.financaspessoais.model.entity.Lancamento;
 import com.aula.financaspessoais.model.enums.StatusLancamento;
@@ -12,6 +14,10 @@ public interface LancamentoService {
 	Lancamento atualizar(Lancamento lancamento);
 	
 	List<Lancamento> buscar(Lancamento lancamentoFiltro);
+	
+	Optional<Lancamento> obterPorId(Long id);
+	
+	BigDecimal obterSaldoPorUsuario(Long id);
 	
 	void deletar(Lancamento lancamento);
 	

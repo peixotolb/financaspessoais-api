@@ -13,10 +13,10 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.aula.financaspessoais.exception.ErroAutenticacao;
-import com.aula.financaspessoais.financaspessoais.service.UsuarioService;
-import com.aula.financaspessoais.financaspessoais.service.impl.UsuarioServiceImpl;
 import com.aula.financaspessoais.model.entity.Usuario;
 import com.aula.financaspessoais.model.repository.UsuarioRepository;
+import com.aula.financaspessoais.service.UsuarioService;
+import com.aula.financaspessoais.service.impl.UsuarioServiceImpl;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

@@ -1,4 +1,4 @@
-package com.aula.financaspessoais.financaspessoais.service.impl;
+package com.aula.financaspessoais.service.impl;
 
 import java.util.Optional;
 
@@ -7,9 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.aula.financaspessoais.exception.ErroAutenticacao;
 import com.aula.financaspessoais.exception.RegraNegocioException;
-import com.aula.financaspessoais.financaspessoais.service.UsuarioService;
 import com.aula.financaspessoais.model.entity.Usuario;
 import com.aula.financaspessoais.model.repository.UsuarioRepository;
+import com.aula.financaspessoais.service.UsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -49,6 +49,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if(existe) {
 			throw new RegraNegocioException("Já existe um usuário cadastrado com este email.");
 		}
+	}
+
+	@Override
+	public Optional<Usuario> obterPorId(Long id) {
+		return repository.findById(id);
 	}
 
 }
